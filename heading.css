@@ -1,0 +1,38 @@
+/* --------------------------- Heading --------------------------- */
+/* --------------------------------------------------------------- */
+
+h1 > span, h2 > span, h3 > span, h4 > span { 
+  display: inline-block;
+}
+
+.heading-decoration-red,
+.heading-decoration-yellow,
+.heading-decoration-blue,
+.heading-decoration-white {
+  --extra-width: ( var(--padding, 5%) * 3 );
+  --extra-height: var(--size-500);
+
+  --left-padding: calc( var(--extra-width) / 3 );
+  --right-padding: calc( var(--extra-width) * ( 2 / 3 ) );
+  --block-padding: calc( var(--extra-height) / 2 );
+
+  padding-inline: var(--left-padding) var(--right-padding);
+  padding-block: var(--block-padding);
+  left: calc( 0% - var(--left-padding) );
+  position: relative;
+  width: fit-content;
+  background-size: 100% 100%;
+
+  /* Inherit --bg-color from parent element's card class */
+  background-color: var(--bg-color);
+  -webkit-mask-image: url(images/heading_decoration.svg);
+  mask-image: url(images/heading_decoration.svg);
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+}
+
+.heading-decoration-red { --bg-color: var(--clr-primary-red); }
+.heading-decoration-yellow { --bg-color: var(--clr-primary-yellow); }
+.heading-decoration-blue { --bg-color: var(--clr-primary-blue); }
+.heading-decoration-white {  --bg-color: var(--clr-neutral-100); }
+
