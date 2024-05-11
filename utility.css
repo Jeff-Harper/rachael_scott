@@ -53,8 +53,8 @@
 .fs-secondary-heading {
   font-size: var(--fs-secondary-heading);
 }
-.fs-body-small {
-  font-size: var(--fs-body-small);
+.fs-body-large {
+  font-size: var(--fs-body-large);
 }
 .fs-title {
   font-size: var(--fs-title);
@@ -134,11 +134,20 @@
 /* Container and positioning */
 .container {
   --max-width: var(--large-screen-min);
+  --min-width: var(--medium-screen-min);
   
   width: min(var(--max-width), 100% - (var(--padding) * 2));
   margin-inline: auto;
   position: relative;
   z-index: 100;
+}
+
+.content-block {
+  position: relative;
+  margin-inline: auto;
+  width: 100%;
+  height: auto;
+  overflow: visible;
 }
 
 /* Flex */
@@ -147,14 +156,28 @@
   display: flex;
   gap: calc( var(--gap) / 2 );
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
+}
+.flex-row {
+  flex-direction: row;
 }
 .flex-column {
   flex-direction: column;
 }
 .flex-space-between {
   justify-content: space-between;
+}
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+
+/* Gap */
+.gap-1 {
+  gap: calc( var(--gap) ) 
+}
+.gap-2 {
+  gap: calc( var(--gap) * 2 ) 
 }
 
 /* Div styling */
@@ -166,6 +189,13 @@
   background-position: top;
   background-size: 40px 4px;
   background-repeat: repeat-x;
+}
+
+/* Display on different screen sizes */
+@media (max-width: 1024px) {
+  .large-screen-only {
+    display: none;
+  }
 }
 
 /* Accessability */

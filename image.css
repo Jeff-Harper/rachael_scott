@@ -1,9 +1,17 @@
 /* ---------------------------- Images --------------------------- */
 /* --------------------------------------------------------------- */
+@media (min-width: 1024px) {
+  .hero-image-right {
+    background-image: url(images/large_illustration_rachael.png);
+    background-repeat: no-repeat;
+    background-position: calc(50% + 325px) 20%;
+    background-size: 650px;
+  }
+}
 
 .circle-image-small {
   border-radius: 9999px;
-  display: flex;
-  justify-content: center;
-  align-content: center;
+  background-color: rgb(223, 223, 223);
+  width: 150px;
+  height: 150px;
 }

@@ -1,0 +1,138 @@
+/* --------------------- Primary navigation ---------------------- */
+/* --------------------------------------------------------------- */
+.primary-header {
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 100;
+  padding: 10px;
+  width: 100%;
+  background-color: white;
+}
+
+.logo {
+/*   margin: .25rem; */
+  height: 5vh;
+  width: 15vh;
+}
+
+.primary-navigation {
+  --gap: 2.5em;
+  list-style: none;
+  padding: 0 40px;
+  margin: 0;
+}
+.primary-navigation a {
+  text-decoration: none;
+  color: var(--clr-primary-blue-400);
+  font-size: var(--fs-500);
+}
+.primary-navigation a:hover {
+  text-decoration: 3px underline;
+}
+.primary-navigation a.active,
+.primary-navigation a:active {
+  color: var(--clr-neutral-500);
+}
+
+/* Hamburger menu */
+.hamburger-menu {
+  display: none;
+}
+
+
+@media (max-width: 35em) {
+  .primary-navigation {
+    --gap: 1.5em;
+    position: fixed;
+    z-index: 1000;
+    inset: 0 0 0 30%;
+
+    flex-direction: column;
+    padding: min(30vh, 10rem) 2em;
+
+    transform: translateX(100%);
+    transition: transform 350ms ease-out;
+
+    background: var(--clr-nav-bg);
+  }
+
+  .primary-navigation[data-visible="true"] {
+    transform: translateX(0%);
+  }
+
+  .primary-navigation a {
+    text-decoration: none;
+    color: var(--clr-neutral-100);
+    font-size: var(--fs-550);
+  }
+  .primary-navigation a:hover {
+    text-decoration: 3px underline;
+  }
+  .primary-navigation a.active,
+  .primary-navigation a:active {
+    color: var(--clr-neutral-500);
+  }
+
+  /* Hamburger menu */
+  .hamburger-menu {
+    --animation-timing: 200ms ease-in-out;
+  
+    --bar-width: 60px;
+    --bar-height: 8px;
+    --gap: 6px;
+  
+    --hamburger-height: calc(var(--bar-height) * 3 + var(--gap) * 2);
+    /* multiply by square root of 2 */
+    --x-width: calc(var(--hamburger-height) * 1.41421356237);
+  
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+    width: max-content;
+    position: relative;
+    z-index: 9999;
+    cursor: pointer;
+  }
+  
+  .hamburger-menu::before,
+  .hamburger-menu::after,
+  .hamburger-menu input {
+    content: "";
+    width: var(--bar-width);
+    height: var(--bar-height);
+    background-color: var(--clr-primary-blue-400);
+    border-radius: 9999px;
+    transform-origin: right center;
+    transition: opacity var(--animation-timing), width var(--animation-timing), rotate var(--animation-timing), translate var(--animation-timing), background-color var(--animation-timing);
+  }
+  
+  .hamburger-menu input {
+    appearance: none;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    pointer-events: none;
+  }
+  
+  .hamburger-menu:has(input:checked)::before {
+    rotate: -45deg;
+    width: var(--x-width);
+    translate: 0 calc(var(--bar-height) / -2);
+    background-color: var(--clr-neutral-100);
+  }
+  
+  .hamburger-menu:has(input:checked)::after {
+    rotate: 45deg;
+    width: var(--x-width);
+    translate: 0 calc(var(--bar-height) / 2);
+    background-color: var(--clr-neutral-100);
+  }
+  
+  .hamburger-menu input:checked {
+    opacity: 0;
+    width: 0;
+  }
+}
+
+

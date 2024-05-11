@@ -9,8 +9,8 @@ h1 > span, h2 > span, h3 > span, h4 > span {
 .heading-decoration-yellow,
 .heading-decoration-blue,
 .heading-decoration-white {
-  --extra-width: ( var(--padding, 5%) * 3 );
-  --extra-height: var(--size-500);
+  --extra-width: 20%;
+  --extra-height: var(--size-400);
 
   --left-padding: calc( var(--extra-width) / 3 );
   --right-padding: calc( var(--extra-width) * ( 2 / 3 ) );
@@ -25,9 +25,7 @@ h1 > span, h2 > span, h3 > span, h4 > span {
 
   /* Inherit --bg-color from parent element's card class */
   background-color: var(--bg-color);
-  -webkit-mask-image: url(images/heading_decoration.svg);
-  mask-image: url(images/heading_decoration.svg);
-  -webkit-mask-size: 100% 100%;
+  mask-image: url('data:image/svg+xml; utf8, <svg viewBox="0 0 551 137" preserveAspectRatio="none" fill="inherit" xmlns="http://www.w3.org/2000/svg"><path d="M8.40591 5.80421C31.8749 -7.25535 532.061 5.80436 532.061 5.80436C532.061 5.80436 538.669 6.54516 540.504 11.8474C541.873 15.8013 530.458 14.2459 532.061 19.7457C537.012 27.6439 551.599 23.6948 550.981 40.8077C548.985 96.0956 518.554 94.7793 518.554 103.994C521.048 115.841 529.529 109.259 534.019 115.841C538.509 122.423 535.516 125.056 524.041 126.372C512.567 127.689 48.4413 136.4 48.4413 136.4C48.4413 136.4 22.1643 143.485 8.40593 108.974C-3.77757 72.4008 -1.78205 11.4734 8.40591 5.80421Z" fill="inherit"/></svg>');
   mask-size: 100% 100%;
 }
 

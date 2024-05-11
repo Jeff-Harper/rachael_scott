@@ -1,0 +1,76 @@
+/* -------------------------- Carousel --------------------------- */
+/* --------------------------------------------------------------- */
+.carousel {
+  position: relative;
+}
+
+.carousel__container {
+  --carousel-bg-color: var(--clr-neutral-100);
+
+  --carousel-image-size: 125px;
+  --carousel-image-padding: 10px;
+  --carousel-image-offset: -35px;
+
+  position: relative;
+  width: 450px; 
+  height: fit-content;
+}
+
+.carousel__image {  
+  position: relative;
+  z-index: 120;
+  margin-inline: auto;
+  margin-bottom: var(--carousel-image-offset);
+  padding: var(--carousel-image-padding);
+  width: fit-content;
+  border-top-left-radius: 9999px;
+  border-top-right-radius: 9999px;
+  background: var(--carousel-bg-color);
+}
+
+.carousel__image * {
+  border-radius: 9999px;
+  background-color: rgb(223, 223, 223); /* delete */
+  width: var(--carousel-image-size);
+  height: var(--carousel-image-size);
+}
+
+.carousel__image::before,
+.carousel__image::after {
+  --carousel-image-decoration: calc( 
+    ( ( var(--carousel-image-size) + var(--carousel-image-padding) ) / 2 ) + ( var(--carousel-image-offset) / 2 )
+  );
+
+  content: '';
+  position: absolute;
+  left: calc;
+  bottom: calc( -0.5px - var(--carousel-image-offset) );
+  width: var(--carousel-image-decoration);
+  height: var(--carousel-image-decoration);
+
+  background-image: radial-gradient(
+    circle at 0px 0px, 
+    rgba(0, 0, 0, 0) calc(var(--carousel-image-decoration) - 0.5px), 
+    var(--carousel-bg-color) var(--carousel-image-decoration)
+  );
+}
+
+.carousel__image::before {
+  left: calc( 0.5px - var(--carousel-image-decoration) );
+}
+.carousel__image::after {
+  right: calc( 0.5px - var(--carousel-image-decoration) );
+  transform: rotateY(180deg);
+}
+
+.carousel__body {
+  padding: 65px 50px;
+  border-radius: var(--border-radius);
+  background: var(--clr-neutral-100);
+}
+
+.carousel__name {
+  color: var(--clr-neutral-500);
+  padding-top:20px;
+  text-decoration: underline;
+}

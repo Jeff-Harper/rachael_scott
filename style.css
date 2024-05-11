@@ -4,12 +4,14 @@
 @import "heading.css";
 @import "card.css";
 @import "image.css";
+@import "carousel.css";
+@import "nav.css";
 
 :root {
   --small-screen-max: 340px;
   --medium-screen-min: 768px;
   --large-screen-min: 1024px;
-  --padding: 7%;
+  --padding: 6%;
   --gap: 3.5rem;
   --line-width: 2px;
   --border-radius: 20px;
@@ -22,6 +24,7 @@
 
   --clr-neutral-100: hsl(0, 0%, 100%); /* #FFFFFF */
   --clr-neutral-400: hsl(34, 100%, 97%); /* #FFF9F1 */
+  --clr-neutral-500: hsl(0, 0%, 53%);
   --clr-neutral-600: hsl(194, 76%, 81%); /* #FFF9F1 */
   --clr-neutral-900: hsl(0, 0%, 0%); /* #000000 */
 
@@ -52,11 +55,11 @@
   --fs-title: var(--fs-700);
   --fs-primary-heading: var(--fs-600);
   --fs-secondary-heading: var(--fs-600);
-  --fs-body: var(--fs-500);
-  --fs-body-small: var(--fs-500);
+  --fs-body: var(--fs-400);
+  --fs-body-large: var(--fs-500);
   --fs-nav: var(--fs-400);
   --fs-small-button: var(--fs-300);
-  --fs-medium-button: var(--fs-400);
+  --fs-medium-button: var(--fs-300);
   --fs-large-button: var(--fs-500);
 
   --size-100: .25rem;
@@ -75,11 +78,11 @@
     --fs-title: var(--fs-750);
     --fs-primary-heading: var(--fs-700);
     --fs-secondary-heading: var(--fs-600);
-    --fs-body: var(--fs-500);
-    --fs-body-small: var(--fs-400);
+    --fs-body: var(--fs-400);
+    --fs-body-large: var(--fs-500);
     --fs-nav: var(--fs-400);
     --fs-small-button: var(--fs-300);
-    --fs-medium-button: var(--fs-400);
+    --fs-medium-button: var(--fs-300);
     --fs-large-button: var(--fs-500);
   }
 }
