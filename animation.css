@@ -1,0 +1,97 @@
+/* Animations */
+@keyframes fade-in-right {
+  from {opacity: 0; left: -100px;}
+  to {opacity: 1; left: 0;}
+}
+@keyframes fade-in-left {
+  from {opacity: 0; left: 100px;}
+  to {opacity: 1; left: 0;}
+}
+@keyframes fade-in-up {
+  from {opacity: 0; bottom: -100px;}
+  to {opacity: 1; bottom: 0;}
+}
+@keyframes fade-in-down {
+  from {opacity: 0; top: 100px;}
+  to {opacity: 1; top: 0;}
+}
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes heading-wipe-right {
+  0% { opacity: 0; mask-size: 100% 100%, 15% 95%; }
+  20% { opacity: 1; }
+  100% { opacity: 1; mask-size: 100% 100%, 100% 100%; }
+}
+
+
+@media (prefers-reduced-motion: no-preference) {
+  :root {
+    --anim-curve: cubic-bezier(0.33, 1, 0.68, 1);
+    --curve-ease-in-out-quint: cubic-bezier(0.83, 0, 0.17, 1);
+    --short-duration: 800ms;
+    --medium-duration: 1200ms;
+    --long-duration: 1600ms;
+  }
+
+  [class*="animate-fade"],
+  [class*="animate-heading"] {
+    opacity: 0;
+    position: relative;
+  }
+
+  .animation-delay-100 {
+    animation-delay: 200ms;
+  }
+  .animation-delay-200 {
+    animation-delay: 400ms;
+  }
+  .animation-delay-300 {
+    animation-delay: 600ms;
+  }
+  .animation-delay-400 {
+    animation-delay: 800ms;
+  }
+  .animation-delay-400 {
+    animation-delay: 1000ms;
+  }
+
+  .animate-fade-in-right[data-animate] {
+    animation-name: fade-in-right;
+    animation-duration: var(--short-duration);
+    animation-timing-function: var(--anim-curve);
+    animation-fill-mode: forwards;
+  }
+  .animate-fade-in-left[data-animate] {
+    animation-name: fade-in-left;
+    animation-duration: var(--short-duration);
+    animation-timing-function: var(--anim-curve);
+    animation-fill-mode: forwards;
+  }
+  .animate-fade-in-down[data-animate] {
+    animation-name: fade-in-down;
+    animation-duration: var(--short-duration);
+    animation-timing-function: var(--anim-curve);
+    animation-fill-mode: forwards;
+  }
+  .animate-fade-in-up[data-animate] {
+    animation-name: fade-in-up;
+    animation-duration: var(--short-duration);
+    animation-timing-function: var(--anim-curve);
+    animation-fill-mode: forwards;
+  }
+  .animate-dash[data-animate] path {
+    animation: dash 2500ms linear forwards;
+    animation-delay: 500ms;
+  }
+
+  .animate-heading-wipe-right[data-animate] {
+    animation-name: heading-wipe-right;
+    animation-duration: 700ms;
+    animation-timing-function: var(--curve-ease-in-out-quint);
+    animation-fill-mode: forwards;
+    animation-delay: 200ms;
+  }
+}

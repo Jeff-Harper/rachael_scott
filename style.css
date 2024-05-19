@@ -1,18 +1,20 @@
 @import "reset.css";
 @import "utility.css";
+@import "nav.css";
 @import "button.css";
 @import "heading.css";
 @import "card.css";
 @import "image.css";
 @import "carousel.css";
-@import "nav.css";
+@import "animation.css";
 
 :root {
   --small-screen-max: 340px;
   --medium-screen-min: 768px;
-  --large-screen-min: 1024px;
+  /* --large-screen-min: 1024px; */
+  --large-screen-min: 1224px; 
   --padding: 6%;
-  --gap: 3.5rem;
+  --gap: 56px;
   --line-width: 2px;
   --border-radius: 20px;
 
@@ -23,12 +25,10 @@
   --clr-accent-blue: hsl(186, 89%, 29%); /* #087E8B */
 
   --clr-neutral-100: hsl(0, 0%, 100%); /* #FFFFFF */
-  --clr-neutral-400: hsl(34, 100%, 97%); /* #FFF9F1 */
+  --clr-neutral-400: hsl(33, 100%, 98%); /* #FFF9F1 */
   --clr-neutral-500: hsl(0, 0%, 53%);
   --clr-neutral-600: hsl(194, 76%, 81%); /* #FFF9F1 */
   --clr-neutral-900: hsl(0, 0%, 0%); /* #000000 */
-
-  --clr-shadow-400: hsla(186, 89%, 5%, 0.1);
 
   --ff-primary: "Poppins", sand-serif;
   --ff-secondary: "EB Garamond", serif;
@@ -57,7 +57,7 @@
   --fs-secondary-heading: var(--fs-600);
   --fs-body: var(--fs-400);
   --fs-body-large: var(--fs-500);
-  --fs-nav: var(--fs-400);
+  --fs-nav: var(--fs-700);
   --fs-small-button: var(--fs-300);
   --fs-medium-button: var(--fs-300);
   --fs-large-button: var(--fs-500);
@@ -65,24 +65,29 @@
   --size-100: .25rem;
   --size-200: .5rem;
   --size-300: .75rem;
-  --size-400: 1rem;
-  --size-500: 1.5rem;
-  --size-600: 2.5rem;
-  --size-700: 5rem;
-  --size-800: 7.5rem;
-  --size-900: 10rem;
+  --size-400: 16px;
+  --size-500: 24px;
+  --size-600: 40px;
+  --size-700: 80px;
+  --size-800: 120px;
+  --size-900: 160px;
 }
 
-@media (min-width: 50em) {
+@media (min-width: 35em) {
   :root {
     --fs-title: var(--fs-750);
     --fs-primary-heading: var(--fs-700);
     --fs-secondary-heading: var(--fs-600);
     --fs-body: var(--fs-400);
     --fs-body-large: var(--fs-500);
-    --fs-nav: var(--fs-400);
+  }
+}
+
+@media (min-width: 768px) {
+  :root {
+    --fs-nav: var(--fs-500);
     --fs-small-button: var(--fs-300);
-    --fs-medium-button: var(--fs-300);
+    --fs-medium-button: var(--fs-400);
     --fs-large-button: var(--fs-500);
   }
 }

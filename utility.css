@@ -75,17 +75,15 @@
 }
 
 /* Padding and margins */
-@media (min-width: 800px) and (min-height: 800px) {
-  .percent-height-60 { min-height: 60svh }
-  .percent-height-65 { min-height: 65svh }
-  .percent-height-70 { max-height: 70svh }
-  .percent-height-75 { min-height: 75svh }
-  .percent-height-80 { min-height: 80svh }
-  .percent-height-85 { min-height: 85svh }
-  .percent-height-90 { min-height: 90svh }
-  .percent-height-95 { min-height: 95svh }
-  .percent-height-100 { min-height: 100svh }
-}
+.percent-height-60 { min-height: 60svh }
+.percent-height-65 { min-height: 65svh }
+.percent-height-70 { max-height: 70svh }
+.percent-height-75 { min-height: 75svh }
+.percent-height-80 { min-height: 80svh }
+.percent-height-85 { min-height: 85svh }
+.percent-height-90 { min-height: 90svh }
+.percent-height-95 { min-height: 95svh }
+.percent-height-100 { min-height: 100svh }
 
 .margin-block-100 { margin-block: var(--size-100); }
 .margin-block-200 { margin-block: var(--size-200); }
@@ -96,6 +94,16 @@
 .margin-block-700 { margin-block: var(--size-700); }
 .margin-block-800 { margin-block: var(--size-800); }
 .margin-block-900 { margin-block: var(--size-900); }
+
+.margin-before-100 { margin-block-start: var(--size-100); }
+.margin-before-200 { margin-block-start: var(--size-200); }
+.margin-before-300 { margin-block-start: var(--size-300); }
+.margin-before-400 { margin-block-start: var(--size-400); }
+.margin-before-500 { margin-block-start: var(--size-500); }
+.margin-before-600 { margin-block-start: var(--size-600); }
+.margin-before-700 { margin-block-start: var(--size-700); }
+.margin-before-800 { margin-block-start: var(--size-800); }
+.margin-before-900 { margin-block-start: var(--size-900); }
 
 .margin-after-100 { margin-block-end: var(--size-100); }
 .margin-after-200 { margin-block-end: var(--size-200); }
@@ -119,6 +127,16 @@
 .padding-block-800 { padding-block: var(--size-800); }
 .padding-block-900 { padding-block: var(--size-900); }
 
+.padding-before-100 { padding-block-start: var(--size-100); }
+.padding-before-200 { padding-block-start: var(--size-200); }
+.padding-before-300 { padding-block-start: var(--size-300); }
+.padding-before-400 { padding-block-start: var(--size-400); }
+.padding-before-500 { padding-block-start: var(--size-500); }
+.padding-before-600 { padding-block-start: var(--size-600); }
+.padding-before-700 { padding-block-start: var(--size-700); }
+.padding-before-800 { padding-block-start: var(--size-800); }
+.padding-before-900 { padding-block-start: var(--size-900); }
+
 .padding-after-100 { padding-block-end: var(--size-100); }
 .padding-after-200 { padding-block-end: var(--size-200); }
 .padding-after-300 { padding-block-end: var(--size-300); }
@@ -133,31 +151,78 @@
 
 /* Container and positioning */
 .container {
-  --max-width: var(--large-screen-min);
-  --min-width: var(--medium-screen-min);
-  
-  width: min(var(--max-width), 100% - (var(--padding) * 2));
-  margin-inline: auto;
   position: relative;
   z-index: 100;
+  width: min(var(--large-screen-min), 100% - (var(--padding) * 2));
+  margin-inline: auto;
 }
 
-.content-block {
+.content-block-small,
+.content-block-large {
+  display: block;
   position: relative;
   margin-inline: auto;
-  width: 100%;
-  height: auto;
-  overflow: visible;
 }
+.content-block-small {
+  max-width: calc( var(--large-screen-min) * 0.5 );
+}
+.content-block-large {
+  max-width: calc( var(--large-screen-min) * 0.7 );
+}
+
+/* Border */
+.border {
+  border: 2px solid var(--clr-neutral-900);
+}
+
+/* Backgorounds */
+
+.bg-grid-paper {
+  --bg-grid-size: 30px;
+  --bg-dash-length: 5px;
+  --bg-dash-width: 1px;
+  --bg-dash-color: #b1b1b1;
+  --bg-background: var(--clr-accent-blue);
+
+  background-color: var(--bg-background);
+  background-size: (var(--bg-dash-length)*2) (var(--bg-dash-length)*2), var(--bg-grid-size) var(--bg-grid-size);
+  background-image:
+    linear-gradient(to bottom, transparent var(--bg-dash-length), var(--bg-background) var(--bg-dash-length)),
+    linear-gradient(to right, var(--bg-dash-color) var(--bg-dash-width), transparent var(--bg-dash-width)),
+    linear-gradient(to right, transparent var(--bg-dash-length), var(--bg-background) var(--bg-dash-length)),
+    linear-gradient(to bottom, var(--bg-dash-color) var(--bg-dash-width), transparent var(--bg-dash-width));
+}
+
+/* Shadow */
+.shadow-red,
+.shadow-yellow,
+.shadow-blue,
+.shadow-black {
+  box-shadow: 12px 12px var(--shadow-clr);
+  border-radius: var(--border-radius)
+}
+.shadow-red {
+  --shadow-clr: var(--clr-primary-red);
+}
+.shadow-yellow {
+  --shadow-clr: var(--clr-primary-yellow);
+}
+.shadow-blue {
+  --shadow-clr: var(--clr-primary-blue);
+}
+.shadow-black {
+  --shadow-clr: var(--clr-neutral-900);
+}
+
 
 /* Flex */
 .flex-row,
 .flex-column {
   display: flex;
-  gap: calc( var(--gap) / 2 );
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  gap: calc( var(--gap) / 2 );
 }
 .flex-row {
   flex-direction: row;
@@ -171,14 +236,14 @@
 .flex-nowrap {
   flex-wrap: nowrap;
 }
+.flex-grow {
+  flex-grow: 1;
+}
 
 /* Gap */
-.gap-1 {
-  gap: calc( var(--gap) ) 
-}
-.gap-2 {
-  gap: calc( var(--gap) * 2 ) 
-}
+.gap-0 { gap: 0px; }
+.gap-1 { gap: calc( var(--gap) ) }
+.gap-2 { gap: calc( var(--gap) * 2 ) }
 
 /* Div styling */
 .box-shadow {
@@ -192,47 +257,51 @@
 }
 
 /* Display on different screen sizes */
-@media (max-width: 1024px) {
+@media (max-width: 1023px) {
   .large-screen-only {
     display: none;
   }
 }
+@media (min-width: 1024px) {
+  .smaller-screen-only {
+    display: none;
+  }
+}
+
+/* Pointer events */
+.not-clickable {
+  pointer-events: none;
+}
 
 /* Accessability */
 .sr-only {
-  position:absolute;
-  left:-10000px;
-  top:auto;
-  width:1px;
-  height:1px;
-  overflow:hidden;
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 }
 
-/* columns */
-/* "em" is the only unit that is consistent across all browsers and operating systems when zooming */
-/* This "em" does not reference the root element, it references the browser default */
+/* Columns */
 @media (min-width: 1024px) {
   .even-columns,
   .uneven-columns-right,
   .uneven-columns-left {
     display: grid;
-    gap: var(--gap, 2.5rem);
+    grid-gap: var(--gap, 2.5rem) var(--gap, 2.5rem);
     justify-content: center;
-  }
-
-  .even-columns {
     grid-auto-flow: column;
+    grid-auto-rows: 1fr;
+  }
+  .even-columns {
     grid-auto-columns: 1fr;
   }
   .uneven-columns-left {
-    grid-auto-flow: column;
-    grid-auto-columns: 1fr;
     grid-template-columns: calc(60% - ( var(--gap) / 2 ) ) 
       calc(40% - ( var(--gap) / 2 ) );
   }
   .uneven-columns-right {
-    grid-auto-flow: column;
-    grid-auto-columns: 1fr;
     grid-template-columns: calc(40% - ( var(--gap) / 2 ) ) 
     calc(60% - ( var(--gap) / 2 ) );
   }

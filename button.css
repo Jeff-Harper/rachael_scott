@@ -2,7 +2,10 @@
 /* --------------------------------------------------------------- */
 
 button {
-  --button-shadow: .1em .3em .5em var(--clr-shadow-400);
+  /* --button-shadow: .1em .3em .5em var(--clr-shadow-400); */
+  --button-shadow-low: 1px 3px 4px hsla(186, 89%, 5%, 0.2);
+  --button-shadow-medium: 2px 3px 7px hsla(186, 89%, 5%, 0.15);
+  --button-shadow-high: 3px 9px 12px hsla(186, 89%, 5%, 0.1);
 
   text-decoration: none;
   background: var(--clr-neutral-100);
@@ -28,26 +31,27 @@ button {
 
 button:hover {
   transform: translateY(-2px);
-  box-shadow: var(--button-shadow);
+  box-shadow: var(--button-shadow-high);
 }
 button:active {
   transform: translateY(2px);
-  box-shadow: var(--button-shadow), 
+  box-shadow: var(--button-shadow-low), 
     9999px 9999px var(--clr-shadow-400) inset;
 }
 
 .small-button,
 .medium-button,
 .large-button {
-  min-width: min(70%, 300px);
+  min-width: min(60%, 250px);
   border: var(--line-width) solid var(--clr-neutral-900);
   border-radius: 9999px;
   -webkit-border-radius: 9999px;
-  box-shadow: var(--button-shadow);
+  box-shadow: var(--button-shadow-medium);
 }
 .small-button {
+  min-width: fit-content;
+  padding: 1em 1.2em;
   font-size: var(--fs-small-button);
-  padding: .9em 1.2em;
 }
 .medium-button {
   font-size: var(--fs-medium-button);

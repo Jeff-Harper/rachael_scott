@@ -1,17 +1,111 @@
 /* ---------------------------- Images --------------------------- */
 /* --------------------------------------------------------------- */
+.hero-image {
+  position: relative;
+  width: 250px;
+  margin-inline: auto;
+}
 @media (min-width: 1024px) {
-  .hero-image-right {
-    background-image: url(images/large_illustration_rachael.png);
-    background-repeat: no-repeat;
-    background-position: calc(50% + 325px) 20%;
-    background-size: 650px;
+  .hero-image {
+    width: 100%;
+    transform: scale(1.1);
   }
 }
 
-.circle-image-small {
+[class*="image-extra-small"] {
+  --img-width: 120px;
+  --img-height: 120px;
+}
+[class*="image-small"] {
+  --img-width: 200px;
+  --img-height: 200px;
+}
+[class*="image-medium"] {
+  --img-width: 300px;
+  --img-height: 300px;
+}
+[class*="image-large"] {
+  --img-width: 400px;
+  --img-height: 400px;
+}
+[class*="image-extra-large"] {
+  --img-width: 550px;
+  --img-height: 550px;
+}
+
+.circle-image-extra-small,
+.circle-image-small, 
+.circle-image-medium, 
+.circle-image-large,
+.circle-image-extra-large {
+  width: var(--img-width);
+  height: var(--img-height);
+  margin-inline: auto;
+  object-fit: contain;
   border-radius: 9999px;
-  background-color: rgb(223, 223, 223);
-  width: 150px;
-  height: 150px;
+}
+
+.square-image-extra-small,
+.square-image-small, 
+.square-image-medium, 
+.square-image-large,
+.square-image-extra-large {
+  width: var(--img-width);
+  max-height: var(--img-height);
+  margin-inline: auto;
+  object-fit: contain;
+  border-radius: var(--border-radius);
+}
+
+.portrait-image-wrapper {
+  position: static;
+  width: 100%;
+  margin-inline: auto;
+/*   border: 3px solid red; */
+}
+.portrait-image-wrapper > * {
+  position: relative;
+  top: -200px;
+  border: var(--line-width) solid var(--clr-neutral-900);
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  margin-block-end: -180px;
+}
+
+@media (min-width: 769px) {
+  .portrait-image-wrapper {
+    width: 100%;
+    height: 0px;
+  }
+  .portrait-image-wrapper > * {
+    position: absolute; 
+    top: calc( 0px - ( var(--img-height) / 2 ) );
+    right: 10%;
+    width: var(--img-width);
+    height: var(--img-height);
+    margin-block-end: 0px;
+  }
+}
+
+/* Image positioning */
+.image-top-left {
+  position: absolute;
+  top: var(--padding);
+  left: var(--padding)
+}
+.image-top-right {
+  position: absolute;
+  top: var(--padding);
+  right: var(--padding)
+}
+.image-bottom-right {
+  position: absolute;
+  bottom: var(--padding);
+  right: var(--padding)
+}
+.image-bottom-left {
+  position: absolute;
+  bottom: var(--padding);
+  left: var(--padding)
 }

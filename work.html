@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Rachael Scott, Instructional Designer</title>
+  </head>
+  <body class="bg-neutral-400">
+
+    <header id="primary-header" class="padding-block-200 bg-neutral-400">
+      <div class="container flex-row flex-nowrap flex-space-between">
+        <!-- logo -->
+        <a href="index.html">
+          <!-- <img class="logo" src="" alt="Logo"> -->
+          <!-- delete --><div style="height: 50px; width: 120px; border-radius: 100px; background: rgb(216, 216, 216);"></div>
+          <span class="sr-only">Home page</span>
+        </a>
+        <!-- nav links -->
+        <nav class="flex-row flex-space-between">
+          <!-- hamburger -->
+          <label for="menu" class="hamburger-menu" aria-controls="primary-navigation" aria-expanded="false">
+            <span class="sr-only">Menu</span>
+            <input id="menu" class="mobile-nav-toggle" type="checkbox">
+          </label>
+          <!-- list -->
+          <ul class="primary-navigation flex-row" data-visible="false">
+            <li><a href="index.html" active><span class="sr-only">Home</span></a>
+            <li><a href="services.html">Services</a>
+            <li><a class="active" href="work.html">Work</a>
+            <li><a href="about.html">About</a>
+            <li><a href="contact.html">Contact</a>
+          </ul>
+          <!-- email button -->
+          <!-- <button class="chat-button | medium-button | bg-primary-red">Let's chat!</button> -->
+        </nav>
+      </div>
+    </header>
+
+    <!-- <header class="bg-neutral-400 | padding-block-400">
+      <div class="container | flex-row flex-space-between">
+        <div class="flex-row">
+          <a href="#" style="background-color: rgb(117, 223, 255); width: 80px; height: 80px; border-radius: 100px;"></a>
+          <nav class="primary-navigation">
+            <ul role="list" class="nav-list flex-row">
+              <li><a href="#"></a>Services</li>
+              <li><a href="#"></a>Work</li>
+              <li><a href="#"></a>About</li>
+            </ul>
+          </nav>
+        </div>
+        <button class="medium-button | bg-primary-red">Let's chat!</button>
+      </div>
+    </header> -->
+
+    <main>
+      
+      <!-- # -->
+      <section id="#" class="padding-before-900 | bg-neutral-700" role="contentinfo" aria-label="#h1 text goes here">
+        <div class="container">
+          Work
+        </div>
+      </section>
+
+      <!-- # -->
+      <section id="#" class="dashed-divider padding-before-900 | bg-neutral-700" role="contentinfo" aria-label="#h1 text goes here">
+        <div class="container">
+          
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="dashed-divider bg-neutral-400 | padding-block-700" role="contentinfo" aria-label="#h2 text goes here">
+        <div class="container">
+          <div class="even-columns">
+            <div class="flex-row">
+              <h2 class="fs-850 ff-title italic">
+                <span>Let's be learning friends!</span>
+              </h2>
+            </div>
+            <div class="flex-row">
+              <button class="large-button bg-primary-yellow" type="button">CONTACT ME!</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="dashed-divider bg-accent-blue | padding-block-700" role="contentinfo" aria-label="#h2 text goes here">
+      <div class="container">
+        <div class="even-columns">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </footer>
+
+
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

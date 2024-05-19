@@ -50,14 +50,23 @@ h1, h2, h3, h4 { line-height: 1.2; }
 /* Balance text wrapping on headings */
 h1, h2, h3, h4 { 
   text-wrap: balance; 
+  position: relative;
 }
 
-/* Default block margins */
+/* Default block margins on headings */
 h1 { margin-block: 0 var(--size-400); }
 h2 { margin-block: 0 var(--size-400); }
 h3 { margin-block: 0 var(--size-400); }
 h4 { margin-block: 0 var(--size-300); }
 p { margin-block: 0.4em; }
+
+/* Spans in headings are block elements */
+h1 span,
+h2 span,
+h3 span,
+h4 span {
+  display: inline-block;
+}
 
 /* Paragraph indent */
 p { text-indent: 2ch; }
