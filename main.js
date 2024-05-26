@@ -36,6 +36,39 @@ navToggle.addEventListener('click', () => {
 })
 
 
+/* ----------------- Form validation ------------------ */
+/* ---------------------------------------------------- */
+const inputName = document.querySelector('#input-name');
+const inputEmail = document.querySelector('#input-email');
+const inputMessage = document.querySelector('#input-message');
+const errorMessage = document.querySelector('.form-error-message');
+
+const inputs = [inputName, inputEmail, inputMessage];
+
+inputs.forEach((item) => {
+  item.textContent = '';
+  item.addEventListener('focusin', () => {
+    errorMessage.textContent = ''
+    item.classList.remove('error');
+  })
+});
+
+const submit = (e) => {
+  e.preventDefault();
+  console.log("submit");
+  if (inputMessage.value.length < 10) {
+    inputMessage.classList.add('error');
+    errorMessage.textContent = "Please add more text!";
+    return
+  }
+  errorMessage.textContent = "Thanks for reaching out!";
+  setTimeout(() => {
+    window.location.reload();
+  }, 5000)
+};
+
+const form = document.querySelector("form");
+form.addEventListener("submit", submit);
 
 /* -------------------- Accordian --------------------- */
 /* ---------------------------------------------------- */

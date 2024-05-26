@@ -7,6 +7,7 @@
 @import "image.css";
 @import "carousel.css";
 @import "animation.css";
+@import "form.css";
 
 :root {
   --small-screen-max: 340px;
@@ -23,11 +24,17 @@
   --clr-primary-blue: hsl(185, 76%, 64%); /* #5FDEE9 */
 
   --clr-accent-blue: hsl(186, 89%, 29%); /* #087E8B */
+  --clr-accent-blue-transparent: hsla(186, 89%, 29%, 0.01);
+  --clr-accent-green: hsl(157, 83%, 37%);
+  --clr-accent-green-transparent: hsla(157, 83%, 37%, 0.01);
+  --clr-accent-red: hsl(4, 62%, 42%);
+  --clr-accent-red-transparent: hsla(4, 62%, 42%, 0.15);
 
   --clr-neutral-100: hsl(0, 0%, 100%); /* #FFFFFF */
   --clr-neutral-400: hsl(33, 100%, 98%); /* #FFF9F1 */
-  --clr-neutral-500: hsl(0, 0%, 53%);
-  --clr-neutral-600: hsl(194, 76%, 81%); /* #FFF9F1 */
+  --clr-neutral-500: hsl(29, 53%, 92%);
+  --clr-neutral-600: hsl(0, 0%, 75%); /* #FFF9F1 */
+  --clr-neutral-700: hsl(0, 0%, 60%); /* #FFF9F1 */
   --clr-neutral-900: hsl(0, 0%, 0%); /* #000000 */
 
   --ff-primary: "Poppins", sand-serif;
@@ -63,7 +70,7 @@
   --fs-large-button: var(--fs-500);
 
   --size-100: .25rem;
-  --size-200: .5rem;
+--size-200: .5rem;
   --size-300: .75rem;
   --size-400: 16px;
   --size-500: 24px;

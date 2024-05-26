@@ -1,0 +1,63 @@
+/* ------------------------ Form elements ------------------------ */
+/* --------------------------------------------------------------- */
+
+.inputs {
+  margin-top: var(--size-500);
+}
+
+.input-container {
+  margin-block: 10px;
+}
+
+.form-end {
+  margin-top: var(--size-600);
+}
+
+.form-label {
+  display: block;
+  position: relative;
+  padding-block: 0.2rem;
+  color: var(--clr-neutral-700);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-semi-bold);
+  user-select: none;
+  transition: all 500ms;
+}
+
+.form-input {
+  display: block;
+  position: relative;
+  width: 100%;
+  padding: 0.5rem 0.5rem;
+  border-radius: 0.2rem;
+  border: 1px solid var(--clr-neutral-600, gray);
+  background-color: var(--clr-neutral-400);
+  font-size: var(--fs-body-large);
+}
+.form-input:focus {
+  outline: 1px solid var(--clr-neutral-900, black);
+  border: 1px solid var(--clr-neutral-900, black);
+  background-color: transparent;
+}
+/* Input field empty */
+.form-input:placeholder-shown {
+  background-color: transparent;
+}
+/* Form label when input field empty */
+.form-input:placeholder-shown + .form-label,
+.form-label:has(+.form-input:placeholder-shown) {
+  color: var(--clr-neutral-900)
+}
+/* Input field error */
+.form-input:is(.error) {
+  background-color: var(--clr-accent-red-transparent);
+}
+
+textarea:is(.form-input) {
+  resize: none;
+  overflow-y: auto; 
+}
+input:-webkit-autofill {
+  box-shadow: 0 0 0 50px var(--clr-accent-blue-transparent) inset;
+  border-color: var(--clr-neutral-500);
+}

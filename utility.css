@@ -178,14 +178,14 @@
 /* Backgorounds */
 
 .bg-grid-paper {
-  --bg-grid-size: 30px;
-  --bg-dash-length: 5px;
-  --bg-dash-width: 1px;
-  --bg-dash-color: #b1b1b1;
-  --bg-background: var(--clr-accent-blue);
+  --bg-grid-size: 60px;
+  --bg-dash-length: 10px;
+  --bg-dash-width: 3px;
+  --bg-dash-color: var(--clr-neutral-500);
+  --bg-background: var(--clr-neutral-400);
 
   background-color: var(--bg-background);
-  background-size: (var(--bg-dash-length)*2) (var(--bg-dash-length)*2), var(--bg-grid-size) var(--bg-grid-size);
+  background-size: calc(var(--bg-dash-length)*2) calc(var(--bg-dash-length)*2), var(--bg-grid-size) var(--bg-grid-size);
   background-image:
     linear-gradient(to bottom, transparent var(--bg-dash-length), var(--bg-background) var(--bg-dash-length)),
     linear-gradient(to right, var(--bg-dash-color) var(--bg-dash-width), transparent var(--bg-dash-width)),
@@ -214,6 +214,12 @@
   --shadow-clr: var(--clr-neutral-900);
 }
 
+/* Scale */
+.scale-120 { transform: scale(120%); }
+.scale-150 { transform: scale(150%); }
+
+/* User select */
+.no-select { user-select: none; }
 
 /* Flex */
 .flex-row,
@@ -238,6 +244,9 @@
 }
 .flex-grow {
   flex-grow: 1;
+}
+.flex-end {
+  justify-content: flex-end;
 }
 
 /* Gap */

@@ -1,10 +1,5 @@
 /* ---------------------------- Images --------------------------- */
 /* --------------------------------------------------------------- */
-.hero-image {
-  position: relative;
-  width: 250px;
-  margin-inline: auto;
-}
 @media (min-width: 1024px) {
   .hero-image {
     width: 100%;
@@ -36,13 +31,14 @@
 .circle-image-extra-small,
 .circle-image-small, 
 .circle-image-medium, 
-.circle-image-large,
+.circle-image-large, 
 .circle-image-extra-large {
   width: var(--img-width);
   height: var(--img-height);
   margin-inline: auto;
   object-fit: contain;
   border-radius: 9999px;
+  background-color: rgb(236, 236, 236);
 }
 
 .square-image-extra-small,
@@ -61,12 +57,13 @@
   position: static;
   width: 100%;
   margin-inline: auto;
-/*   border: 3px solid red; */
 }
 .portrait-image-wrapper > * {
   position: relative;
   top: -200px;
   border: var(--line-width) solid var(--clr-neutral-900);
+  /* outline: 1px dashed var(--clr-neutral-900);
+  outline-offset: -12px; */
   width: 300px;
   height: 300px;
   object-fit: cover;

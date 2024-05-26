@@ -17,6 +17,8 @@ button {
     transform 150ms ease,
     box-shadow 150ms ease;
   user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
   white-space: nowrap;
   height: fit-content;
   width: fit-content;
